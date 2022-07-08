@@ -49,7 +49,7 @@ class TaskActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setUpSpinner() {
-        val adapter = ArrayAdapter(this,
+        val adapter = ArrayAdapter<String>(this,
             com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
             labels)
 

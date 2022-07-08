@@ -19,9 +19,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-
-
-
     val list = arrayListOf<TodoModel>()
     var adapter = TodoAdapter(list)
 
@@ -32,9 +29,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        addTask.setOnClickListener {
-            startActivity(Intent(this, TaskActivity::class.java))
-        }
         setSupportActionBar(toolbar)
         todoRv.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
@@ -197,5 +191,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+    fun openNewTask(view: View) {
+        startActivity(Intent(this, TaskActivity::class.java))
     }
 }
